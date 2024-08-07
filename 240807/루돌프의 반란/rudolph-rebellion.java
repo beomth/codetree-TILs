@@ -78,11 +78,14 @@ public class Main {
                 if(santas[i].c > santas[targetSanta].c) {
                     targetSanta = i;
                 }
-                continue;
+                //continue;
             }
             // distance가 minDistance보다 작으면
-            minDistance = distance;
-            targetSanta = i;
+            if(distance < minDistance) {
+                minDistance = distance;
+                targetSanta = i;
+            }
+            
         }
 
         int dR = santas[targetSanta].r - rudolph.r;
